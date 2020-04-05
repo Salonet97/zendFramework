@@ -1,0 +1,54 @@
+
+<style>
+  .uper {
+    margin-top: 40px;
+  }
+</style>
+<div class="card uper">
+  <div class="card-header">
+    Agregar organizador
+  </div>
+  <div class="card-body">
+   <!-- @if ($errors->any())
+      <div class="alert alert-danger">
+        
+      </div><br />
+    @endif-->
+      <form method="post" action="{{ route('organizador.store') }} " enctype="multipart/form-data">
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="nombreorazonsocial">Nombre o Razon Social:</label>
+              <input type="text" class="form-control" name="nombreorazonsocial"/>
+          </div>
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="rfc">RFC:</label>
+              <input type="text" class="form-control" name="rfc"/>
+          </div>
+          <div class="form-group">
+              <label for="contacto">Contacto:</label>
+              <input type="text" class="form-control" name="contacto"/>
+          </div>
+          <div class="form-group">
+              <label for="url">URL:</label>
+              <input type="text" class="form-control" name="url"/>
+          </div>
+          <div class="form-group">
+              <label for="correo">Correo:</label>
+              <input type="text" class="form-control" name="correo"/>
+          </div>
+
+          <div class="form-group">
+              <label for="telefono">Telefono:</label>
+              <input type="text" class="form-control" name="telefono"/>
+          </div>
+          <div class="form-group">
+              <label for="direcion ">Direccion</label>
+              <input type="text" class="form-control" name="direcion"/>
+          </div>
+          
+              <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+  </div>
+</div>
+<!--@endsection-->

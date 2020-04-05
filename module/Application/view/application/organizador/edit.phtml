@@ -1,0 +1,96 @@
+<!--@extends('plantilla')
+
+@section('content')-->
+<style>
+  .uper {
+    margin-top: 40px;
+  }
+</style>
+<div class="card uper">
+  <div class="card-header">
+    Editar Organizador
+  </div>
+  <div class="card-body">
+    <!--@if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div>
+	-->
+	<br />
+    <!--@endif-->
+      <form method="POST" 
+      action="{{ route('organizador.update', $organizador->id) }}" 
+      enctype="multipart/form-data">
+       <!-- {{ csrf_field() }}
+        @method('PUT')-->
+        <div class="form-group">
+              <!--@csrf-->
+              <label for="id">Id:</label>
+              <input type="text" 
+              class="form-control" 
+              readonly="true"
+              value="{{$organizador->id}}"
+              name="id"/>
+          </div>
+
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="nombreorazonsocial">Nombre o Razon Social:</label>
+              <input type="text" 
+              value="{{$organizador->nombreorazonsocial}}"
+              class="form-control" 
+              name="nombreorazonsocial"/>
+          </div>
+
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="contacto">Contacto:</label>
+              <input type="text" 
+              value="{{$organizador->contacto}}"
+              class="form-control" 
+              name="contacto"/>
+          </div>
+          
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="url">URL:</label>
+              <input type="text" 
+              value="{{$organizador->url}}"
+              class="form-control" 
+              name="url"/>
+          </div>
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="correo">Correo:</label>
+              <input type="text" 
+              value="{{$organizador->correo}}"
+              class="form-control" 
+              name="correo"/>
+          </div>
+
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="telefono">Telefono:</label>
+              <input type="text" 
+              value="{{$organizador->telefono}}"
+              class="form-control" 
+              name="telefono"/>
+          </div>
+
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="direccion">Direccion:</label>
+              <input type="text" 
+              value="{{$organizador->direccion}}"
+              class="form-control" 
+              name="direccion"/>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+  </div>
+</div>
+<!--@endsection-->
+

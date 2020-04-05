@@ -1,0 +1,20 @@
+<style>
+  .uper {
+    margin-top: 40px;
+  }
+</style>
+<div class="card uper">
+  <div class="card-header">
+    Agregar Categoría
+  </div>
+  <div class="card-body">
+    <br />
+      <form method="post" action="{{ route('categoria.store') }} " enctype="multipart/form-data">
+          <div class="form-group">
+              <label for="descripcion">Descripcion:</label>
+              <input type="text" class="form-control" name="descripcion"/>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+  </div>
+</div>
