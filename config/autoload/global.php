@@ -12,7 +12,7 @@
  */
 
 return [
-   'db' => [
+    'db' => [
 		'driver' => 'Pdo_Mysql',
 		'database' => 'eva',
 		'hostname' => 'localhost:3306',
