@@ -14,7 +14,7 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'router' => [
         'routes' => [
-			'actividad' => [
+			/*'actividad' => [
                 'type'    => Segment::class,
                 'options' => [
                     'route'    => '/actividad[/:action]',
@@ -43,27 +43,7 @@ return [
                         'action'     => 'index',
                     ],
                 ],
-            ],
-            'categoria' => [
-                'type'    => Segment::class,
-                'options' => [
-                    'route'    => '/categoria[/:action]',
-                    'defaults' => [
-                        'controller' => Controller\CategoriaController::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
-            'participante' => [
-                'type'    => Segment::class,
-                'options' => [
-                    'route'    => '/participante[/:action]',
-                    'defaults' => [
-                        'controller' => Controller\ParticipanteController::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
+            ],*/
             'home' => [
                 'type'    => Literal::class,
                 'options' => [
@@ -90,11 +70,10 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
-			Controller\PonenteController::class => InvokableFactory::class,
-			Controller\OrganizadorController::class => InvokableFactory::class,
-			Controller\ActividadController::class => InvokableFactory::class,
-			Controller\CategoriaController::class => InvokableFactory::class,
-            Controller\ParticipanteController::class => InvokableFactory::class,
+			//Controller\PonenteController::class => InvokableFactory::class,
+			//Controller\OrganizadorController::class => InvokableFactory::class,
+			//Controller\ActividadController::class => InvokableFactory::class,
+            //Controller\CategoriaController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

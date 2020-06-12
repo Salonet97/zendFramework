@@ -35,12 +35,37 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
+
                         <li class="nav-item active">
                             <a class="nav-link" href="<?= $this->url('home') ?>">Home <span class="sr-only">(current)</span></a>
                         </li>
+                         
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="../public/actividad">Actividad <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="../public/catalogo">Catalogo <span class="sr-only">(current)</span></a>
+                        </li>
+                        <!--
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="../public/evento">Evento <span class="sr-only">(current)</span></a>
+                        </li>
+                        -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="../public/categoria">Categoria <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../public/participante">Participante <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../public/ponente">Ponente <span class="sr-only">(current)</span></a>
+                        </li>
+
+
                     </ul>
                 </div>
             </div>
+
         </nav>
         <div class="container">
             <?= $this->content ?>
@@ -52,3 +77,5 @@
         <?= $this->inlineScript() ?>
     </body>
 </html>
+
+

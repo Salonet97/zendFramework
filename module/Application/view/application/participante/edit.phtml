@@ -1,3 +1,6 @@
+<!--@extends('plantilla')
+
+@section('content')-->
 <style>
   .uper {
     margin-top: 40px;
@@ -8,59 +11,95 @@
     Editar Participante
   </div>
   <div class="card-body">
-      <br />
-          <form method="POST" 
-      action="{{ route('Participante.update', $Participante->id) }}" 
+    <!--@if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif-->
+      <form method="POST" 
+      action="{{ route('ponente.update', $ponente->id) }}" 
       enctype="multipart/form-data">
-
+        <!--{{ csrf_field() }}
+        @method('PUT')-->
         <div class="form-group">
+              <!--@csrf-->
               <label for="id">Id:</label>
               <input type="text" 
               class="form-control" 
               readonly="true"
-              value=""
+               value="{{$ponente->id}}"
               name="id"/>
           </div>
 
           <div class="form-group">
+              <!--@csrf-->
               <label for="nombrecompleto">Nombre Completo:</label>
               <input type="text" 
-              value=""
+              value="{{$ponente->nombrecompleto}}"
               class="form-control" 
               name="nombrecompleto"/>
           </div>
+
           <div class="form-group">
-              <label for="CURP">CURP:</label>
+              <!--@csrf-->
+              <label for="sexo">Sexo:</label>
               <input type="text" 
-              value=""
+              value="{{$ponente->sexo}}"
               class="form-control" 
-              name="CURP"/>
+              name="sexo"/>
           </div>
+
           <div class="form-group">
-              <label for="institucionprocedencia">Instutucion de Procedencia:</label>
-              <input type="text" 
-              value=""
+             <!-- @csrf-->
+              <label for="foto">Foto:</label>
+              <input type="file" 
+              value="{{$ponente->foto}}"
               class="form-control" 
-              name="institucionprocedencia"/>
+              name="foto"/>
           </div>
+          
+         <div class="form-group">
+              <!--@csrf-->
+              <label for="cv">Curriculum Vitae:</label>
+              <input type="file" 
+              value="{{$ponente->cv}}"
+              class="form-control" 
+              name="cv"/>
+          </div>
+
           <div class="form-group">
-              <label for="Cuenta">Cuenta:</label>
-              <input type="text" 
-              value=""
+              <!--@csrf-->
+              <label for="nivelacademico">Nivel Academico:</label>
+              <input type="file" 
+              value="{{$ponente->nivelacademico}}"
               class="form-control" 
-              name="Cuenta"/>
+              name="nivelacademico"/>
           </div>
+
           <div class="form-group">
-              <label for="Password">Password:</label>
-              <input type="text" 
-              value=""
+              <!--@csrf-->
+              <label for="ccuenta">Cuenta:</label>
+              <input type="file" 
+              value="{{$ponente->cuenta}}"
               class="form-control" 
-              name="Password"/>    
+              name="cuenta"/>
           </div>
+
+          <div class="form-group">
+              <!--@csrf-->
+              <label for="password">Password:</label>
+              <input type="password" 
+              value="{{$ponente->password}}"
+              class="form-control" 
+              name="password"/>
           </div>
           <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
   </div>
 </div>
-
+@endsection
 

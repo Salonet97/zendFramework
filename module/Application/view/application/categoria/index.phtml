@@ -3,8 +3,7 @@
     margin-top: 40px;
   }
 </style>
-<div class="uper">
-    <br />
+
   <table class="table table-striped">
     <thead>
         <tr>
@@ -14,21 +13,22 @@
         </tr>
     </thead>
     <tbody>
+        
         <tr>
             <td></td>
             <td></td>
-            <td><a href="{{ route('categoria.edit', $categoria->id)}}" 
+            <td><a href="" 
             class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('categoria.destroy', $categoria->id)}}" 
-                method="post">
+                <form action="" method="post">
+                  
                   <button class="btn btn-danger" type="submit" 
-                  onclick="return confirm('Esta seguro de borrar {{$categoria->descripcion}}')" >Del</button>
+                  onclick="" >Del</button>
                 </form>
             </td>
         </tr>
+        
     </tbody>
   </table>
 <div>
-
 

@@ -1,36 +1,34 @@
-@extends('plantilla')
+<?php
+$this->form->prepare();
+$this->form->setAttribute('action', $this->url('actividad', ['action' => 'resultado']))
+        ->setAttribute('method', 'post')
+        ->setAttribute('class', 'form-horizontal')
+        ->setAttribute('role', 'form');
+?>
 
-@section('content')
 <style>
     .uper{
-        margin-top: 80px;
+        margin-top: 40px;
     }
-    </style>
-    <div class="card.uper">
-        <div class="card-header">
-            Agregar Actividad
-        </div>
-        <div class="card-body">
-            @if ($errors->any())
-            <div class="alert.alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div><br />
-            @endif
-            <form method="post" action="{{ route('actividad.store')}}" enctype="multipart/form-data">
-                
-                {{csrf_field()}}
-                <div class="form-group">
-                    @csrf
-                    <label for="description">Actividad</label>
-                    <input type="text" class="form-control" name="descripcion"/>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </form>
-        </div>
-    </div>
-     @endsection
+</style>
+<div class="card.uper">
+	<div class="card-header">
+		Agregar Actividad
+	</div>
+	<div class="card-body">
+		<form method="post" action="" enctype="multipart/form-data">
+
+
+			<div class="form-group">
+				<!-- <label for="description">Actividad</label>-->
+				<?= $this->form()->formLabel($this->form->get('descripcion'))?>
+				<!-- <input type="text" class="form-control" name="descripcion"/> -->
+				<?= $this->form()->formInput($this->form->get('descripcion'))?>
+				<div style="color: red"><?= $this->formElementErrors($this->form->get('descripcion'))?></div>
+			</div>
+
+			<!-- <button type="submit" class="btn btn-primary">Guardar</button> -->
+			<?= $this->formSubmit($this->form->get('guardar'))?>
+		</form>
+	</div><br/>
+</div>

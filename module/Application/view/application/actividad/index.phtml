@@ -1,18 +1,9 @@
-
-@extends('plantilla')
-
-@section('content')
 <style>
   .uper {
     margin-top: 40px;
   }
 </style>
-<div class="uper">
-  @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
+
   <table class="table table-striped">
     <thead>
         <tr>
@@ -22,24 +13,22 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($actividad as $actividad)
+        
         <tr>
-            <td>{{$actividad->id}}</td>
-            <td>{{$actividad->descripcion}}</td>
-            <td><a href="{{ route('actividad.edit', $actividad->id)}}" 
+            <td></td>
+            <td></td>
+            <td><a href="" 
             class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('actividad.destroy', $actividad->id)}}" 
-                method="post">
-                  @csrf
-                  @method('DELETE')
+                <form action="" method="post">
+                  
                   <button class="btn btn-danger" type="submit" 
-                  onclick="return confirm('Esta seguro de borrar {{$actividad->descripcion}}')" >Del</button>
+                  onclick="" >Del</button>
                 </form>
             </td>
         </tr>
-        @endforeach
+        
     </tbody>
   </table>
 <div>
-@endsection
+

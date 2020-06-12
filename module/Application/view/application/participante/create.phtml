@@ -1,35 +1,53 @@
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
-<div class="card uper">
-  <div class="card-header">
-    Agregar Participante 
-  </div>
-  <div class="card-body">
-      <form method="post" action="" enctype="multipart/form-data">
-          <div class="form-group">
-              <label for="nombrecompleto">Nombre Completo</label>
-              <input type="text" class="form-control" name="nombrecompleto"/>
-     
-          <label for="CURP">CURP</label>
-              <input type="text" class="form-control" name="CURP"/>
-          </div>
-          <label for="Institucion de Procedencia">Institucion de Procedencia</label>
-              <input type="text" class="form-control" name="Institucion de Procedencia"/>
-    
-          <label for="Cuenta">Cuenta</label>
-              <input type="text" class="form-control" name="Cuenta"/>
-      
-          <label for="Password">Password</label>
-              <input type="Password" class="form-control" name="Password"/>
-       
-              <button type="submit" class="btn btn-primary">Agregar</button>
-      </form>
-  </div>
-  </div>
-  
-  
-  
+<?php
+$this->form->prepare();
+$this->form->setAttribute('action', $this->url('participante', ['action' => 'registrar']))
+        ->setAttribute('method', 'post')
+        ->setAttribute('class', 'form-horizontal')
+        ->setAttribute('role', 'form');
+?>
 
+
+<style>
+    .uper{
+        margin-top: 40px;
+    }
+</style>
+<div class="card.uper">
+  <div class="card-header">
+    Agregar Participante
+  </div>
+  <?= $this->titulo ?>
+  <div class="card-body">
+    <!--<form method="post" action="" enctype="multipart/form-data">-->
+    <?= $this->form()->openTag($this->form); ?>
+
+      <div class="form-group">
+        <!-- <label for="nombre">Participante</label>-->
+        <?= $this->formLabel($this->form->get('nombre')) ?>
+        <!-- <input type="text" class="form-control" name="nombre"/> -->
+        <?= $this->formInput($this->form->get('nombre')) ?>
+        <div style="color: red"><?= $this->formElementErrors($this->form->get('nombre'))?></div>
+      </div>
+
+      <div class="form-group">
+        <!-- <label for="curp">Participante</label>-->
+        <?= $this->formLabel($this->form->get('curp')) ?>
+        <!-- <input type="text" class="form-control" name="curp"/> -->
+        <?= $this->formInput($this->form->get('curp')) ?>
+        <div style="color: red"><?= $this->formElementErrors($this->form->get('curp'))?></div>
+      </div>
+
+      <div class="form-group">
+        <!-- <label for="nombre">Participante</label>-->
+        <?= $this->formLabel($this->form->get('nombre')) ?>
+        <!-- <input type="text" class="form-control" name="nombre"/> -->
+        <?= $this->formInput($this->form->get('nombre')) ?>
+        <div style="color: red"><?= $this->formElementErrors($this->form->get('nombre'))?></div>
+      </div>
+
+      <!-- <button type="submit" class="btn btn-primary">Guardar</button> -->
+      <?= $this->formSubmit($this->form->get('guardar'))?>
+      <?= $this->form()->closeTag() ?>
+    <!--</form>-->
+  </div><br/>
+</div>
