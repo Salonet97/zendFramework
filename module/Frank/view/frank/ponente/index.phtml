@@ -1,0 +1,59 @@
+ <!--@extends('plantilla')
+
+@section('content')-->
+<style>
+	.uper {
+		margin-top: 40px;
+	}
+</style>
+<div class="uper">
+	<!--@if(session()->get('success'))
+    <div class="alert alert-success">
+		{{ session()->get('success') }}  
+    </div>
+	-->
+	<br />
+	<!--@endif-->
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<td>ID</td>
+				<td>NOMBRE COMPLETO</td>
+				<td>SEXO</td>
+				<td>FOTO</td>
+				<td>CV</td>
+				<td>NIVEL ACADEMICO</td>
+				<td>CUENTA</td>
+				<td>PASSWORD</td>
+				<td>CORREO</td>
+				<td colspan="2">Action</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- @foreach($categorias as $categoria)-->
+			<tr>
+				<td><!--{{$categoria->id}}--></td>
+				<td><!--{{$categoria->descripcion}}--></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><a href="{{ route('categoria.edit', $categoria->id)}}" 
+					   class="btn btn-primary">Edit</a></td>
+				<td>
+					<form action="{{ route('categoria.destroy', $categoria->id)}}" 
+						  method="post">
+						<!--@csrf
+						@method('DELETE')-->
+						<button class="btn btn-danger" type="submit" 
+								onclick="return confirm('Esta seguro de borrar {{$categoria->descripcion}}')" >Del</button>
+					</form>
+				</td>
+			</tr>
+			<!--@endforeach-->
+		</tbody>
+	</table>
+	<div>
+		<!--@endsection-->

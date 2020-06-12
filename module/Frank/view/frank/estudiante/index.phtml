@@ -1,0 +1,146 @@
+<?php
+$this->form->prepare();
+$this->form->setAttribute('action', $this->url('estudiante', ['action' => 'registrar']))
+        ->setAttribute('method', 'post')
+        ->setAttribute('class', 'form-horizontal')
+        ->setAttribute('role', 'form');
+?>
+
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?= $this->titulo ?></h3>
+            </div>
+            <div class="panel-body">
+                <?= $this->form()->openTag($this->form); ?>
+                
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('codigo')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formInput($this->form->get('codigo')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('codigo')) ?></div>
+                </div>
+                
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('username')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formInput($this->form->get('username')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('username')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('direccion')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formInput($this->form->get('direccion')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('direccion')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('password')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formInput($this->form->get('password')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('password')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('confirmarPassword')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formInput($this->form->get('confirmarPassword')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('confirmarPassword')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('recibeNewsletter')) ?>
+                    <div class="col-sm-2">
+                        <?= $this->formCheckbox($this->form->get('recibeNewsletter')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('recibeNewsletter')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('temas')) ?>
+                    <div class="col-sm-7">
+                        <?= $this->formMultiCheckbox($this->form->get('temas')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('temas')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('genero')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formRadio($this->form->get('genero')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('genero')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('numeroFavorito')) ?>
+                    <div class="col-sm-7">
+                        <?= $this->formRadio($this->form->get('numeroFavorito')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('numeroFavorito')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('pais')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formSelect($this->form->get('pais')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('pais')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->formLabel($this->form->get('experienciaZend')) ?>
+                    <div class="col-sm-5">
+                        <?= $this->formSelect($this->form->get('experienciaZend')) ?>
+                    </div>
+                    <div style="color: red"><?= $this->formElementErrors($this->form->get('experienciaZend')) ?></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-5">
+                        <?= $this->formSubmit($this->form->get('send')) ?>
+                    </div>
+                </div>
+                <?= $this->formHidden($this->form->get('valorSecreto')) ?>
+                <?= $this->form()->closeTag() ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .uper{
+        margin-top: 40px;
+    }
+</style>
+<div class="card.uper">
+	<div class="card-header">
+		Agregar Actividad
+	</div>
+	<div class="card-body">
+		<form method="post" action="" enctype="multipart/form-data">
+
+
+			<div class="form-group">
+				<!-- <label for="description">Actividad</label>-->
+				<?= $this->formLabel($this->form->get('descripcion')) ?>
+				<!-- <input type="text" class="form-control" name="descripcion"/> -->
+				<?= $this->formInput($this->form->get('descripcion')) ?>
+				<div style="color: red"><?= $this->formElementErrors($this->form->get('descripcion'))?></div>
+			</div>
+
+			<!-- <button type="submit" class="btn btn-primary">Guardar</button> -->
+			<?= $this->formSubmit($this->form->get('guardar'))?>
+		</form>
+	</div><br/>
+</div>

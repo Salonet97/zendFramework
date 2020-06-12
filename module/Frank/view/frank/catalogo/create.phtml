@@ -1,0 +1,64 @@
+<?php
+$this->form->prepare();
+$this->form->setAttribute('action', $this->url('catalogo', ['action' => 'guardar']))
+		//->setAttribute('method', 'post')
+		->setAttribute('class', 'form-horizontal')
+		->setAttribute('role', 'form');
+?>
+
+
+<!--<style>
+    .uper{
+        margin-top: 40px;
+    }
+</style>-->
+
+<div class="card.uper">
+	<div class="card-header">
+		Agregar al catalogo
+	</div>
+	<?= $this->titulo ?>
+	<div class="card-body">
+		<!--<form method="post" action="" enctype="multipart/form-data">-->
+		<?= $this->form()->openTag($this->form); ?>
+
+		<div class="form-group">
+			
+			<?= $this->formLabel($this->form->get('titulo')) ?>
+			
+			<?= $this->formInput($this->form->get('titulo')) ?>
+			<div style="color: red"><?= $this->formElementErrors($this->form->get('titulo')) ?></div>
+			
+			<?= $this->formLabel($this->form->get('actividad')) ?>
+			
+			<?= $this->formSelect($this->form->get('actividad')) ?>
+			<div style="color: red"><?= $this->formElementErrors($this->form->get('actividad'))?></div>
+			
+			<?= $this->formLabel($this->form->get('evento')) ?>
+			
+			<?= $this->formSelect($this->form->get('evento')) ?>
+			<div style="color: red"><?= $this->formElementErrors($this->form->get('evento'))?></div>
+			
+			<?= $this->formLabel($this->form->get('costo')) ?>
+			
+			<?= $this->formInput($this->form->get('costo')) ?>
+			<div style="color: red"><?= $this->formElementErrors($this->form->get('costo')) ?></div>
+			
+			<?= $this->formLabel($this->form->get('totalhoras')) ?>
+			
+			<?= $this->formInput($this->form->get('totalhoras')) ?>
+			<div style="color: red"><?= $this->formElementErrors($this->form->get('totalhoras')) ?></div>
+			
+			<?= $this->formLabel($this->form->get('cupolimite')) ?>
+			
+			<?= $this->formInput($this->form->get('cupolimite')) ?>
+			<div style="color: red"><?= $this->formElementErrors($this->form->get('cupolimite')) ?></div>
+		</div>
+
+		<!-- <button type="submit" class="btn btn-primary">Guardar</button> -->
+		<?= $this->formSubmit($this->form->get('guardar')) ?>
+		<?= $this->formHidden($form->get('id')) ?>
+		<?= $this->form()->closeTag() ?>
+		<!--</form>-->
+	</div><br/>
+</div>

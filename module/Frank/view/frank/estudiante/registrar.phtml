@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading"><?= $this->titulo ?></div>
+            <div class="panel-body">
+
+                <table class="table table-striped table-hover" style="width:900px; text-align:left">
+                    <tbody>
+                        <tr>
+                            <td>User Name:</td>
+                            <td><?= $this->estudiante->getUsername() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Dirección:</td>
+                            <td><?= $this->estudiante->getDireccion() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><?= $this->estudiante->getPassword() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Confirmar Password:</td>
+                            <td><?= $this->estudiante->getConfirmarPassword() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Recibe newsletter:</td>
+                            <td><?= $this->estudiante->getRecibeNewsletter() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Temas favoritos:</td>
+                            <td><?php foreach ($this->estudiante->getTemas() as $tema): ?>
+                                    <?= $tema ?>
+                                <?php endforeach; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Género:</td>
+                            <td><?= $this->estudiante->getGenero() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Número Favorito :</td>
+                            <td><?= $this->estudiante->getNumeroFavorito() ?></td>
+                        </tr>
+                        <tr>
+                            <td>País:</td>
+                            <td><?= $this->estudiante->getPais() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Habilidades de Zend:</td>
+                            <td><?php foreach ($this->estudiante->getExperienciaZend() as $exp): ?>
+                                    <?= $exp ?>
+                                <?php endforeach; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Valor Secreto :</td>
+                            <td><?= $this->estudiante->getValorSecreto() ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

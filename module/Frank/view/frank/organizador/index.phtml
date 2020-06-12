@@ -1,0 +1,55 @@
+
+<style>
+  .uper {
+    margin-top: 40px;
+  }
+</style>
+<div class="uper">
+  
+    <!--<div class="alert alert-success">
+       
+    </div>-->
+	<br/>
+  
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <td>ID</td>
+          <td>NOMBRE O RAZON SOCIAL</td>
+          <td>RFC</td>
+          <td>CONTACTO</td>
+          <td>URL</td>
+          <td>CORREO</td>
+          <td>TELEFONO</td>
+          <td>DIRECCION</td>
+          <td colspan="8">Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td><!--{{$organizador->id}}--></td>
+            <td><!--{{$organizador->nombreorazonsocial}}--></td>
+            <td><!--{{$organizador->rfc}}--></td>
+            <td><!--{{$organizador->contacto}}--></td>
+            <td><!--{{$organizador->url}}--></td>
+            <td><!--{{$organizador->correo}}--></td>
+            <td><!--{{$organizador->telefono}}--></td>
+            <td><!--{{$organizador->direccion}}--></td>
+            <td><a href="{{ route('organizador.edit', $organizador->id)}}" 
+            class="btn btn-primary">Edit</a></td>
+            <td>
+                <form action="{{ route('organizador.destroy', $organizador->id)}}" 
+                method="post">
+                  <!--@csrf
+                  @method('DELETE')-->
+                  <button class="btn btn-danger" type="submit" 
+                  onclick="return confirm('Esta seguro de borrar {{$organizador->nombreorazonsocial}}')" >Del</button>
+                </form>
+            </td>
+        </tr>
+        <!--@endforeach-->
+    </tbody>
+  </table>
+<div>
+<!--@endsection-->

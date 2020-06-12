@@ -1,0 +1,58 @@
+<?php
+$this->headTitle($this->titulo);
+?>
+<div class="page-header">
+    <h1><?= $this->escapeHtml($this->titulo) ?></h1>
+</div>
+<style>
+	.uper {
+		margin-top: 40px;
+	}
+</style>
+
+<p>
+	<a class = 'btn btn-default btn-xs' role = 'button'
+	   href="<?= $this->url('catalogo', ['action' => 'create']); ?>">crear (+)</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+			<td>ID</td>
+			<td>TITULO</td>
+			<td>ACTIVIDAD</td>
+			<td>EVENTO</td>
+			<td>COSTO</td>
+			<td>TOTAL DE HORAS</td>
+			<td>LIMITE DE CUPO</td>
+			<td colspan="2">Action</td>
+        </tr>
+    </thead>
+    <tbody>
+		
+		
+		<?php foreach ($this->catalogos as $catalogo): ?>
+        <tr>
+            <td><?= $catalogo->getId() ?></td>
+            <td><?= $catalogo->getTitulo() ?></td>
+			<td><?= $catalogo->getActividad() ?></td>
+			<td><?= $catalogo->getEvento()?></td>
+			<td><?= $catalogo->getCosto() ?></td>
+			<td><?= $catalogo->getTotalhoras() ?></td>
+			<td><?= $catalogo->getCupolimite() ?></td>
+            <td><a href="<?= $this->url('catalogo', ['action' => 'edit', 'id' => $catalogo->getId()]) ?>" 
+				   class="btn btn-primary">Edit</a></td>
+            <td>
+                <a href="<?= $this->url('catalogo', ['action' => 'eliminar', 'id' => $catalogo->getId()]) ?>"
+				   onclick="return confirm('¿Esta seguro que desea eliminar a <?= $catalogo->getTitulo() ?>?');"
+				   class='btn btn-danger btn-xs' role='button'>eliminar</a>
+            </td>
+        </tr>
+		<?php endforeach; ?>
+    </tbody>
+	<?php
+    $this->cycle()->assign(["#F0F0F0", "#FFFFFF"]);
+    $this->cycle()->prev();
+    ?>
+</table>
+<div>

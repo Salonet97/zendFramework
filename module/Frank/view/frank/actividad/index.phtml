@@ -1,0 +1,47 @@
+<?php
+$this->headTitle($this->titulo);
+?>
+<div class="page-header">
+    <h1><?= $this->escapeHtml($this->titulo) ?></h1>
+</div>
+<a href="../../../src/Controller/ActividadController.php"></a>
+<style>
+	.uper {
+		margin-top: 40px;
+	}
+</style>
+
+<p>
+	<a class = 'btn btn-default btn-xs' role = 'button'
+	   href="<?= $this->url('actividad', ['action' => 'create']); ?>">crear (+)</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+			<td>ID</td>
+			<td>DESCRIPCION</td>
+			<td colspan="2">Action</td>
+        </tr>
+    </thead>
+    <tbody>
+		<?php foreach ($this->actividades as $actividad): ?>
+        <tr>
+            <td><?= $actividad->getId() ?></td>
+            <td><?= $this->escapeHtml($actividad->getDescripcion()) ?></td>
+            <td><a href="<?= $this->url('actividad', ['action' => 'edit', 'id' => $actividad->getId()]) ?>" 
+				   class="btn btn-primary">Edit</a></td>
+            <td>
+                <a href="<?= $this->url('actividad', ['action' => 'eliminar', 'id' => $actividad->getId()]) ?>"
+				   onclick="return confirm('¿Esta seguro que desea eliminar a <?= $actividad->getDescripcion() ?>?');"
+				   class='btn btn-danger btn-xs' role='button'>eliminar</a>
+            </td>
+        </tr>
+		<?php endforeach; ?>
+    </tbody>
+	<?php
+    $this->cycle()->assign(["#F0F0F0", "#FFFFFF"]);
+    $this->cycle()->prev();
+    ?>
+</table>
+<div>
