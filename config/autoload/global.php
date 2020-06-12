@@ -12,5 +12,12 @@
  */
 
 return [
-    // ...
+   'db' => [
+		'driver' => 'Pdo_Mysql',
+		'database' => 'eva',
+		'hostname' => 'localhost:3306',
+		'driver_options' => [
+			PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+		],
+	],
 ];
